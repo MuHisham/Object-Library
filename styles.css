@@ -1,5 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root {
+    --dark-blue: #0F67B1;
+    --medium-blue: #3FA2F6;
+    --light-blue: #96C9F4;
+    --pale-yellow: #FAFFAF;
+    --dark-gray: #5a5a5a;
+    --medium-gray: #a9a9a9;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: white;
+}
+
+.container {
+    width: 60%;
+    margin-top: 2rem;
+}
+
+.title {
+    display: flex;
+    margin: 0px auto;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--dark-blue);
+    color: white;
+    padding: .8rem 1.5rem;
+    border-radius: 20px;
+    box-shadow: rgba(63, 162, 246, 0.2) 0px 3px 8px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    row-gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    margin: 0px auto;
+    gap: 15px;
+}
+
+button {
+    appearance: none;
+    font-family: "Inter", sans-serif;
+    padding: .6rem 1.5rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+}
+
+button:hover {
+    transform: translate(-3%, -8%);
+}
+
+.add {
+    background: linear-gradient(45deg, #06D001, #9BEC00);
+}
+
+.remove {
+    background: linear-gradient(45deg, #C80036, #FF6969);
+}
+
+.library {
+    display: flex;
+    /* justify-content: center; */
+    padding: 20px 0px;
+    overflow-x: hidden;
+}
+
+.library:hover {
+    overflow-x: auto;
+}
+
+.card {
+    height: 45vh;
+    background-color: var(--pale-yellow);
+    margin: 0px 20px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 300px;
+    min-width: 250px;
+    text-overflow: ellipsis;
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    color: var(--medium-blue);
+    /* animation: automatic-scroll 10s linear infinite; */
+}
+
+.library:hover {
+    animation: none;
+}
+
+.card > h2 {
+    color: black;
+}
+
+
+.details {
+    color: var(--dark-blue);
+    font-weight: 700;
+}
+
+
+@keyframes automatic-scroll {
+    0% {
+        transform: translateX(-100%);
+    }
+    25% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    75% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60vw; 
+    text-align: right;
+}
+  
+.close {
+    display: block;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    text-align: left;
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+input[type="text"], input[type="number"] {
+    height: 1.5rem;
+    padding: 0px .6rem;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+input[type="radio"] {
+    height: 1.2rem;
+    width: 1.2rem;
+    accent-color: var(--dark-blue);
+    margin-right: 20px;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+}
+
+.options > label {
+    margin-right: 8px;
+}
+
+form > div > label, section > p {
+    margin-bottom: 5px;
+    color: var(--dark-blue);
+}
+
+.submit-button {
+    display: flex;
+    justify-content: center;
+
+}
+
+.submit-button > button {
+    margin: 20px 0px 10px;
+    background-color: var(--dark-blue);
+    border: none;
+    
+}
+
+.submit-button > button:hover {
+    transform: translate(0%, 2%);
+
+}
+
+.animate {
+    animation: automatic-scroll 20s linear infinite;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    width: 90%;
+    margin: 0px auto;
+}
+
+.buttons > button {
+    width: 100%;
+    text-align: center;
+}
+
+.buttons > button:hover {
+    transform: translate(0%, 0%);
+}
+
+.read {
+    background: linear-gradient(45deg, var(--dark-blue), var(--medium-blue));
+}
+
+.notRead {
+    background: linear-gradient(45deg, var(--dark-gray), var(--medium-gray));
 }
